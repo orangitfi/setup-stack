@@ -6,6 +6,7 @@ const fs = require('fs');
 installdir = process.env.HOME + "/.local/bin"
 
 try {
+  console.log("runs-on: '" + core.getInput('runs-on') + "'");
   ro = core.getInput('runs-on').split("-")[0];
 
   fs.mkdirSync(installdir, { recursive: true });
